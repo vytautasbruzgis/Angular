@@ -1,0 +1,28 @@
+<p>shopslist works!</p>
+
+
+<ul>
+    <li *ngFor="let shop of shops">
+        {{shop.Name}} {{shop.ShopItems.length}}
+        <div class="container">
+            <table class="table" *ngIf="shop.ShopItems.length > 0">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">First</th>
+                        <th scope="col">Last</th>
+                        <th scope="col">Handle</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let shopItem of shop.ShopItems">
+                        <th scope="row">1</th>
+                        <td>Mark</td>
+                        <td>Otto</td>
+                        <td>@mdo</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </li>
+</ul>
