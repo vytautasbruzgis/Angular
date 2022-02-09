@@ -15,8 +15,8 @@ export class ShopslistComponent implements OnInit {
 
   public shops: Shop[] = [
     {
-      Name : 'text1',
-      ShopItems : [
+      name : 'text1',
+      shopItems : [
         {
           ShopId : 1,
           ItemId : 1,
@@ -25,12 +25,12 @@ export class ShopslistComponent implements OnInit {
       ]
     },
     {
-      Name : 'text2',
-      ShopItems : []
+      name : 'text2',
+      shopItems : []
     },
     {
-      Name : 'text3',
-      ShopItems : []
+      name : 'text3',
+      shopItems : []
     }
   ]
 

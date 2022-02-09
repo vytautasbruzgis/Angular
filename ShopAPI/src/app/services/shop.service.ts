@@ -11,6 +11,6 @@ export class ShopService {
   constructor (private httpClient: HttpClient) { }
 
   public getAllShops(): Observable<Shop[]>{
-    return this.httpClient.get<Shop[]>("https://localhost:44380/");
+    return this.httpClient.get<Shop[]>("https://localhost:44380/Shop");
   }
 }
