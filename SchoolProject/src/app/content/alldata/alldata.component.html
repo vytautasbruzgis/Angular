@@ -2,14 +2,18 @@
     <div class="row">
         <div class="col">
             <div class="row">
-                <app-school-list></app-school-list>
-                <app-school-create></app-school-create>
+                <app-school-list (schoolRemoveEvent)="schoolRemove($event)" [schoolsInput]="schools">
+                </app-school-list>
+                <app-school-create (schoolCreateEvent)="createSchool($event)">
+                </app-school-create>
             </div>
         </div>
         <div class="col">
             <div class="row">
-                <app-student-list></app-student-list>
-                <app-student-create></app-student-create>
+                <app-student-list (studentRemoveEvent)="studentRemove($event)" [studentsInput]="students">
+                </app-student-list>
+                <app-student-create (studentCreateEvent)="createStudent($event)" [schoolsInput]="schools">
+                </app-student-create>
             </div>
         </div>
     </div>

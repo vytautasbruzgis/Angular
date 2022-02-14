@@ -1,3 +1,26 @@
-<div class="container-fluid">
-    <p>student-list works!</p>
+<div class="container-fluid" [ngSwitch]="studentsInput.length > 0">
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">FullName</th>
+                <th scope="col">Actions</th>
+            </tr>
+        </thead>
+
+        <tbody *ngSwitchCase="true">
+            <tr *ngFor="let student of studentsInput">
+                <th scope="row">{{student.id}}</th>
+                <td>{{student.fullName}}, {{student.firstName}}</td>
+                <td>
+                    <button class="btn" (click)="studentRemove(student.id)">Delete</button>
+                </td>
+            </tr>
+        </tbody>
+        <tbody *ngSwitchCase=" false ">
+            <tr>
+                <td colspan="3 ">There are no students in the list</td>
+            </tr>
+        </tbody>
+    </table>
 </div>

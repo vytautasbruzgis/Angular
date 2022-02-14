@@ -1,3 +1,11 @@
 <div class="container-fluid">
-    <p>school-create works!</p>
+    <form>
+        <div class="mb-3">
+            <label class="form-label">School name</label>
+            <input name="name" id="name" [(ngModel)]="schoolCreate.name" type="text" class="form-control" />
+        </div>
+        <button (click)="createSchool()" type="button" class="btn btn-primary">
+          Submit
+        </button>
+    </form>
 </div>

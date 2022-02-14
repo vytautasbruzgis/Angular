@@ -1,3 +1,26 @@
-<div class="container-fluid">
-    <p>school-list works!</p>
+<div class="container-fluid" [ngSwitch]="schoolsInput.length > 0">
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Name</th>
+                <th scope="col">Actions</th>
+            </tr>
+        </thead>
+
+        <tbody *ngSwitchCase="true">
+            <tr *ngFor="let school of schoolsInput">
+                <th scope="row">{{school.id}}</th>
+                <td>{{school.name}}</td>
+                <td>
+                    <button class="btn" (click)="schoolRemove(school.id)">Delete</button>
+                </td>
+            </tr>
+        </tbody>
+        <tbody *ngSwitchCase=" false ">
+            <tr>
+                <td colspan="3 ">There are no schools in the list</td>
+            </tr>
+        </tbody>
+    </table>
 </div>

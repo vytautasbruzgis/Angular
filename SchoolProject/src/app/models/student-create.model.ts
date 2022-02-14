@@ -1,5 +1,5 @@
 export default interface StudentCreate {
-    firstname: string,
-    lastname: string,
-    schoolid: number
+    firstName: string,
+    lastName: string,
+    schoolId: number
 }

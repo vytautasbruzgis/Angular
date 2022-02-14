@@ -1,4 +1,4 @@
 export default interface School {
-    int: number,
+    id: number,
     name: string
 }

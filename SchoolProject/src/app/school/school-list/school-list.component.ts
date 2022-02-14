@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import School from 'src/app/models/school.model';
 
 @Component({
   selector: 'app-school-list',
@@ -8,8 +9,13 @@ import { Component, OnInit } from '@angular/core';
 export class SchoolListComponent implements OnInit {
 
   constructor() { }
+  @Input() schoolsInput: School[] = [];
+  @Output() schoolRemoveEvent = new EventEmitter<number>();
 
   ngOnInit(): void {
+  }
+  public schoolRemove(schoolId: number){
+    this.schoolRemoveEvent.emit(schoolId)
   }
 
 }

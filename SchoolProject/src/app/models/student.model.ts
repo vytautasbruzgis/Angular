@@ -1,6 +1,7 @@
 export default interface Student {
-    firstname: string,
-    lastname: string,
-    fullname: string,
-    schoolid: number
+    id: number,
+    firstName: string,
+    lastName: string,
+    fullName: string,
+    schoolId: number
 }

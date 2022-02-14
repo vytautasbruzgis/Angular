@@ -1,3 +1,22 @@
 <div class="container-fluid">
-    <p>student-create works!</p>
+    <form>
+        <div class="mb-3">
+            <label class="form-label">First name</label>
+            <input name="firstName" id="firstName" [(ngModel)]="studentCreate.firstName" type="text" class="form-control" />
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Last name</label>
+            <input name="lastName" id="lastName" [(ngModel)]="studentCreate.lastName" type="text" class="form-control" />
+        </div>
+        <div class="mb-3">
+            <label class="form-label">School</label>
+            <select name="schoolId" id="schoolId" [(ngModel)]="studentCreate.schoolId" class="form-control">
+                <option value="0" disabled selected>-- choose school --</option>
+                <option *ngFor="let school of schoolsInput" value="{{school.id}}">{{school.name}}</option>
+            </select>
+        </div>
+        <button (click)="createStudent()" type="button" class="btn btn-primary">
+          Submit
+        </button>
+    </form>
 </div>
