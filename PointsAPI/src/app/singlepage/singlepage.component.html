@@ -1,0 +1,39 @@
+<br>
+<div class="container-fluid">
+    <form>
+    <div class="row">
+        <div class="col-2">
+            <div class="w-100">
+                <select (change)="changeSelectedPointListId()" name="selectedPointListId" id="selectedPointListId" [(ngModel)]="selectedPointListId" class="form-select">
+                    <option value="0" selected>-- new pointlist --</option>
+                    <option *ngFor="let pointList of pointLists" value="{{pointList.id}}">{{pointList.name}}</option>
+                </select>
+            </div>
+            <div class="col">
+                <div class="mb-3">
+                    <input name="pointListName" id="pointListName" [(ngModel)]="pointListCreate.name" type="text" class="form-control" />
+                </div>
+            </div>
+            <button (click)="savePointList()" type="button" class="btn btn-primary">
+                Save
+            </button>
+        </div>
+        <div class="col">
+            <div class="mb-3">
+                <input name="x_coordinate" id="x_coordinate" [(ngModel)]="pointCreate.x_coordinate" type="text" class="form-control" />
+            </div>
+        </div>
+        <div class="col">
+            <div class=" mb-3">
+                <input name="y_coordinate" id="y_coordinate" [(ngModel)]="pointCreate.y_coordinate" type="text" class="form-control" />
+            </div>
+        </div>
+        <div class="col">
+            <button (click)="createPoint()" type="button" class="btn btn-primary">
+                Create
+            </button>
+        </div>
+    </div>
+    </form>
+    <app-pointlist></app-pointlist>
+</div>

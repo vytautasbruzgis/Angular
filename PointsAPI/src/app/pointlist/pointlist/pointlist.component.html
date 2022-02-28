@@ -1,0 +1,28 @@
+<br>
+<div class="container-fluid">
+    <table class="table" [ngSwitch]="pointListInput.points.length > 0">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">X_Coordinate</th>
+                <th scope="col">Y_Coordinate</th>
+                <th scope="col">Actions</th>
+            </tr>
+        </thead>
+        <tbody *ngSwitchCase="true">
+            <tr *ngFor="let point of pointListInput.points">
+                <th scope="row">{{point.id}}</th>
+                <td>{{point.x_Coordinate}}</td>
+                <td>{{point.y_Coordinate}}</td>
+                <td>
+                    <button type="button" class="btn btn-danger">Delete</button>
+                </td>
+            </tr>
+        </tbody>
+        <tbody *ngSwitchCase="false">
+            <tr>
+                <td colspan="4">There are no points in this pointlist</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

@@ -48,7 +48,7 @@ export class AlldataComponent implements OnInit {
           let studArr = [];
           for (let i = 0; i < this.students.length; i++) {
             if((Number(this.students[i].schoolId))!== schoolId)
-              studArr.push(this.students[i]);
+              studArr.push(this.students[i]);//cia palikau netyciom du variantus
           }
           this.students = studArr;
       }, 

@@ -1,0 +1,29 @@
+<div class="container-fluid" [ngSwitch]="pointlistsInput.length > 0">
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Name</th>
+                <th scope="col">Actions</th>
+            </tr>
+        </thead>
+
+        <tbody *ngSwitchCase="true">
+            <tr *ngFor="let pointlist of pointlistsInput">
+                <th scope="row">{{pointlist.id}}</th>
+                <td>{{pointlist.name}}</td>
+                <td>
+                    <button type="button" class="btn btn-primary" (click)="btnClick(pointlist.id);">Open</button>&nbsp;
+                    <button type="button" class="btn btn-secondary">Add point</button>&nbsp;
+                    <button type="button" class="btn btn-danger" (click)="deletePointList(pointlist.id);">Delete</button>
+                </td>
+            </tr>
+        </tbody>
+        <tbody *ngSwitchCase=" false ">
+            <tr>
+                <td colspan="3 ">There are no pointlists in the list</td>
+            </tr>
+        </tbody>
+    </table>
+    <app-pointlist-create></app-pointlist-create>
+</div>
